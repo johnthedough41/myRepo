@@ -34,11 +34,13 @@ namespace UnitTests
         {
             _listSorter = new ListSorter();
         }
+
         [TearDown]
         public void CleanUp()
         {
             _listSorter = null;
         }
+
         [Test]
         public void When_sort_is_invoked()
         {

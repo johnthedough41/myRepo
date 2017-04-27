@@ -41,5 +41,12 @@ namespace UnitTests
 
             Assert.AreEqual(Expected, result);
         }
+
+        [Test]
+        public void When_parse_is_invoked_with_nonexistent_file()
+        {
+            Assert.That(() => _inputParser.Parse("test"),
+                Throws.TypeOf<FileNotFoundException>());
+        }
     }
 }
