@@ -10,10 +10,10 @@ namespace UnitTests
     [TestFixture]
     public class InputParserTest
     {
-        IInputParser _inputParser;
-        string InputFilename;
+        private IInputParser _inputParser;
+        private string _inputFilename;
         
-        List<DataEntry> Expected = new List<DataEntry>
+        List<DataEntry> _expected = new List<DataEntry>
         {
             new DataEntry(){LastName="BUNDY,", FirstName="TERESSA,", Grade="88"},
             new DataEntry(){LastName="SMITH,", FirstName="ALLAN,", Grade="70"},
@@ -25,9 +25,10 @@ namespace UnitTests
         public void Init()
         {
             var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            InputFilename = dir + "\\SampleInput.txt";
+            _inputFilename = dir + "\\SampleInput.txt";
             _inputParser = new InputParser();
         }
+
         [TearDown]
         public void CleanUp()
         {
@@ -37,9 +38,9 @@ namespace UnitTests
         [Test]
         public void When_parse_is_invoked()
         {
-            var result = _inputParser.Parse(InputFilename);
+            var result = _inputParser.Parse(_inputFilename);
 
-            Assert.AreEqual(Expected, result);
+            Assert.AreEqual(_expected, result);
         }
 
         [Test]

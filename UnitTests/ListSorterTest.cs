@@ -8,8 +8,8 @@ namespace UnitTests
     [TestFixture]
     public class ListSorterTest
     {
-        ListSorter _listSorter;
-        List<DataEntry> Input = new List<DataEntry>
+        private ListSorter _listSorter;
+        private List<DataEntry> _inputList = new List<DataEntry>
         {
             new DataEntry(){LastName="BUNDY,", FirstName="TERESSA,", Grade="88"},
             new DataEntry(){LastName="SMITH,", FirstName="ALLAN,", Grade="70"},
@@ -17,7 +17,7 @@ namespace UnitTests
             new DataEntry(){LastName="SMITH,", FirstName="FRANCIS,", Grade="70"},
         };
 
-        List<DataEntry> Expected = new List<DataEntry>
+        private List<DataEntry> _expected = new List<DataEntry>
         {
             new DataEntry(){LastName="AKING,", FirstName="MADISON,", Grade="88"},
             new DataEntry(){LastName="BUNDY,", FirstName="TERESSA,", Grade="88"},
@@ -40,8 +40,8 @@ namespace UnitTests
         [Test]
         public void When_sort_is_invoked()
         {
-            var result = _listSorter.Sort(Input);
-            Assert.AreEqual(Expected, result);
+            var result = _listSorter.Sort(_inputList);
+            Assert.AreEqual(_expected, result);
         }
     }
 }
