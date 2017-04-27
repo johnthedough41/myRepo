@@ -43,7 +43,6 @@ namespace UnitTests
         }
 
         [Test]
-        [ExpectedException(typeof(FileNotFoundException))]
         public void When_parse_is_invoked_with_nonexistent_file()
         {
             var result = _inputParser.Parse(InputFilename);
