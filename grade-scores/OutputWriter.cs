@@ -10,12 +10,12 @@ namespace gradescores
     {
         public void WriteToFileAndDisplay(List<DataEntry> sortedList, string inputFilename)
         {
-            var outputFilename = inputFilename + "-graded.txt";
+            var outputFilename = Path.GetFileNameWithoutExtension(inputFilename) + "-graded.txt";
             var outputFile = new StreamWriter(outputFilename);
 
             foreach (var line in sortedList)
             {
-                var outputString = line.LastName + line.FirstName + line.Grade;
+                var outputString = line.LastName + " " + line.FirstName + " " + line.Grade;
                 outputFile.WriteLine(outputString);
                 Console.WriteLine(outputString);
             }

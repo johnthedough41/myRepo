@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="InputParserTest.cs" />
     <Compile Include="ListSorterTest.cs" />
+    <Compile Include="OutputWriterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
